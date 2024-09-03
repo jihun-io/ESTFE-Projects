@@ -1,29 +1,524 @@
+@import url("./reset.css");
+
 @font-face {
-    font-family: 'OTEnjoystoriesBA';
-    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_two@1.0/OTEnjoystoriesBA.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
+  font-family: "OTEnjoystoriesBA";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_two@1.0/OTEnjoystoriesBA.woff")
+    format("woff");
+  font-weight: normal;
+  font-style: normal;
 }
 
 @font-face {
-    font-family: 'GmarketSansBold';
-    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansBold.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
+  font-family: "GmarketSansBold";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansBold.woff")
+    format("woff");
+  font-weight: normal;
+  font-style: normal;
 }
 
 @font-face {
-    font-family: 'GmarketSansMedium';
-    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
+  font-family: "GmarketSansMedium";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff")
+    format("woff");
+  font-weight: normal;
+  font-style: normal;
 }
 
 @font-face {
-    font-family: 'Noto Sans KR';
-    font-style: normal;
-    font-weight: 400;
-    src: url("https://fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Regular.woff2") format('woff2'),
-    url("https://fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Regular.woff") format('woff'),
-    url("https://fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Regular.otf") format('opentype');
+  font-family: "Noto Sans KR";
+  font-style: normal;
+  font-weight: 400;
+  src: url("https://fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Regular.woff2")
+      format("woff2"),
+    url("https://fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Regular.woff")
+      format("woff"),
+    url("https://fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Regular.otf")
+      format("opentype");
+}
+
+:root {
+  --bg-color: #5b2386;
+  --text-color: #fff;
+  --text-gray: #babcbe;
+  --text-highlight: #f5fd41;
+  --highlight: #fcee21;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  border: 0;
+  clip: rect(0 0 0 0);
+}
+
+html {
+  color: var(--text-color);
+  font-size: 10px;
+}
+
+body {
+  background-color: var(--bg-color);
+  font-family: "GmarketSansMedium";
+  font-weight: normal;
+  padding: 0 2.4rem;
+  font-size: 1.6rem;
+}
+
+.bold {
+  font-family: "GmarketSansBold";
+  font-weight: bold;
+}
+
+header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-image: url("../img/clock.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  margin-top: 4.3rem;
+  margin-bottom: 3.1rem;
+  padding: 3.65rem 0;
+}
+
+header img.title {
+  width: 26.7rem;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+section.desc {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6.2rem;
+}
+
+section.desc q {
+  font-family: "OTEnjoystoriesBA";
+  font-size: 2.2rem;
+  color: var(--text-highlight);
+}
+
+section.desc blockquote {
+  font-size: 1.4rem;
+  line-height: 2.267rem;
+  text-align: center;
+  position: relative;
+}
+
+section.desc blockquote::before,
+section.desc blockquote::after {
+  display: inline-flex;
+  align-items: center;
+  font-family: "GmarketSansBold";
+  font-size: 4.8rem;
+  position: absolute;
+  bottom: -0.4rem;
+  height: 4.8rem;
+  color: #fcee21;
+  opacity: 30%;
+}
+
+section.desc blockquote::before {
+  content: "“";
+  left: 0;
+}
+
+section.desc blockquote::after {
+  content: "”";
+  right: 0;
+}
+
+section.calc {
+  margin-top: 6.2rem;
+  font-size: 1.4rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+section.calc > span.row {
+  white-space: nowrap;
+  display: inline-flex;
+  margin-bottom: 1.8rem;
+}
+
+section.calc span.row {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+section.calc div.hour-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  row-gap: 1.8rem;
+  column-gap: 1.7rem;
+}
+
+span#expertResult,
+span#hourResult {
+  font-family: "GmarketSansBold";
+  font-size: 2.4rem;
+  margin: 0 0.8rem;
+}
+
+section.calc input {
+  width: 15.6rem;
+  border-radius: 0.7rem;
+  border: none;
+  background-color: #fff;
+  padding: 0.925rem 1.1rem;
+  text-align: center;
+  font-family: "GmarketSansMedium";
+  font-size: 1.4rem;
+}
+
+section.calc input::placeholder {
+  color: var(--text-gray);
+}
+
+button {
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);
+  font-size: 1.4rem;
+}
+
+section.calc button {
+  margin-top: 4.9rem;
+  background-color: var(--highlight);
+  border-radius: 1.3rem;
+  color: var(--bg-color);
+  font-family: "GmarketSansBold";
+  padding: 1.8rem 3.65rem;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /* row-gap: 0.4rem; */
+}
+
+section.calc button::after {
+  content: "";
+  display: block;
+  background-image: url("../img/click.png");
+  width: 4.3rem;
+  height: 4.8rem;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  position: absolute;
+  top: 3rem;
+  right: -4.9rem;
+}
+
+section.calc button span {
+  line-height: 1.6rem;
+}
+
+section.result {
+  margin-top: 6.4rem;
+  margin-bottom: 8.3rem;
+  font-size: 1.4rem;
+  text-align: center;
+}
+
+section.result p {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  margin-bottom: 5.5rem;
+}
+
+section.result span.row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+section.result button.goto,
+section.result button.share {
+  padding-top: 1.35rem;
+  padding-bottom: 1.25rem;
+  border-radius: 5.6rem;
+  font-family: "GmarketSansBold";
+  font-weight: bold;
+  color: var(--bg-color);
+}
+
+section.result button.goto {
+  background-color: var(--highlight);
+  padding-left: 1.75rem;
+  padding-right: 1.75rem;
+  margin-right: 1.3rem;
+}
+
+section.result .share {
+  background-color: var(--text-color);
+  padding-left: 1.9rem;
+  padding-right: 1.9rem;
+}
+
+footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  padding-bottom: 3.2rem;
+}
+
+footer img {
+  width: 9.1rem;
+  height: 1.8rem;
+  margin-bottom: 1.7rem;
+}
+
+footer p {
+  font-family: "Noto Sans KR";
+  font-size: 0.9rem;
+  opacity: 0.7;
+  text-align: center;
+  line-height: 1.3rem;
+}
+
+body.modal-show {
+  overflow: hidden;
+}
+
+body.modal-show dialog {
+  display: flex;
+}
+
+dialog {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  width: 91.67%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border: none;
+  border-radius: 30px;
+  box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.5);
+  padding: 3.2rem 4.4rem 4rem 4.5rem;
+}
+
+dialog h3,
+dialog p {
+  font-family: "OTEnjoystoriesBA";
+  color: var(--bg-color);
+}
+
+dialog h3 {
+  display: inline;
+  font-size: 6.4rem;
+  margin-bottom: 0.4rem;
+  line-height: 7rem;
+  white-space: nowrap;
+}
+
+dialog h3.desktop {
+  display: none;
+}
+
+dialog p {
+  font-size: 3.6rem;
+  line-height: 4rem;
+  word-break: keep-all;
+  text-align: center;
+}
+
+dialog img {
+  width: 24.1rem;
+  margin-top: 2.4rem;
+  margin-bottom: 3.4rem;
+}
+
+dialog button {
+  width: 100%;
+  max-width: 24.1rem;
+  padding: 1.9rem 4.5rem 1.7rem;
+  color: var(--bg-color);
+  font-family: "GmarketSansBold";
+  font-size: 1.4rem;
+  line-height: 1.6rem;
+  background-color: var(--highlight);
+  border-radius: 1.3rem;
+  word-break: keep-all;
+}
+
+.mobile-break {
+  display: inline;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 17.14px;
+  }
+
+  button {
+    font-size: 1.4rem;
+  }
+
+  header {
+    height: 15.461rem;
+    margin-top: 7rem;
+    margin-bottom: 2.684rem;
+  }
+
+  header img.title {
+    width: 32rem;
+    transform: translateY(-2px);
+  }
+
+  section.desc q {
+    font-size: 2.1rem;
+  }
+
+  section.desc blockquote {
+    font-size: 1.05rem;
+  }
+
+  section.desc blockquote span.bold {
+    font-size: 1.4rem;
+  }
+
+  section.desc blockquote::before,
+  section.desc blockquote::after {
+    font-size: 5.601rem;
+    width: 2.684rem;
+    height: 5.601rem;
+  }
+
+  section.desc blockquote::before {
+    left: calc(-2.684rem - 0.817rem);
+  }
+  section.desc blockquote::after {
+    right: calc(-2.684rem - 0.817rem);
+  }
+
+  section.calc {
+    margin-top: 5.951rem;
+  }
+
+  section.calc div.hour-container {
+    flex-direction: row;
+    column-gap: 0.992rem;
+  }
+
+  section.calc span.row {
+    gap: 0.992rem;
+  }
+
+  section.calc input {
+    width: 228px;
+    padding: 0.773rem 2.334rem;
+    border-radius: 0.408rem;
+  }
+
+  section.calc button {
+    margin-top: 6.709rem;
+    display: inline-block;
+    padding: 1.225rem 2.859rem;
+    font-size: 0rem;
+    border-radius: 3.267rem;
+  }
+
+  section.calc button span {
+    display: inline-flex;
+    align-items: center;
+
+    height: 1.4rem;
+    font-size: 1.4rem;
+    line-height: 1;
+  }
+
+  section.calc button span:first-child::after {
+    content: "\00a0";
+  }
+
+  section.calc button::after {
+    width: 3.734rem;
+    height: 4.201rem;
+    top: 0.817rem;
+    right: -4.142rem;
+  }
+
+  section.result {
+    margin-top: 8.576rem;
+  }
+
+  section.result p {
+    margin-bottom: 7.41rem;
+  }
+
+  span#expertResult,
+  span#hourResult {
+    font-size: 4.201rem;
+    margin: 0 0.7rem;
+  }
+
+  section.result button.goto,
+  section.result button.share {
+    padding: 1.225rem 2.931rem;
+    border-radius: 3.267rem;
+    font-size: 1.4rem;
+  }
+
+  dialog {
+    width: 41.67%;
+    min-width: 32.905rem;
+    padding: 4.434rem 8.518rem 3.967rem;
+  }
+
+  dialog h3.desktop {
+    display: inline;
+  }
+  dialog h3.mobile {
+    display: none;
+  }
+
+  dialog h3 {
+    font-size: 5.601rem;
+    margin-bottom: 0.233rem;
+  }
+
+  dialog p {
+    font-size: 2.1rem;
+  }
+
+  dialog img {
+    margin-top: 1.692rem;
+    margin-bottom: 4.317rem;
+  }
+
+  dialog button {
+    width: 100%;
+    max-width: none;
+    max-width: 29.638rem;
+    padding: 1.225rem 2.859rem;
+  }
+
+  .mobile-break {
+    display: none;
+  }
 }

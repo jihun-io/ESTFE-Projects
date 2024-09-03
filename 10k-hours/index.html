@@ -1,1 +1,88 @@
 <!DOCTYPE html>
+<html lang="ko-KR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/10000hours.css" />
+    <title>1만 시간의 법칙</title>
+  </head>
+  <body class="modal-hide">
+    <header>
+      <h1 class="sr-only">1만 시간의 법칙</h1>
+      <img src="./img/title.png" alt="1만 시간의 법칙" class="title" />
+    </header>
+    <main>
+      <h2 class="sr-only">1만 시간의 법칙 알아 보기</h2>
+      <section class="desc">
+        <q>연습은 어제의 당신보다 당신을 더 낫게 만든다.</q>
+        <blockquote>
+          <span class="bold">1만 시간의 법칙</span>은<br />
+          어떤 분야의 전문가가 되기 위해서는<br />
+          최소한 1만 시간의 훈련이 필요하다는 법칙이다.
+        </blockquote>
+      </section>
+      <section class="calc">
+        <h2 class="sr-only">계산하기</h2>
+        <span class="row">
+          나는
+          <label class="sr-only" for="expert">분야</label>
+          <input
+            type="text"
+            name="expert"
+            id="expert"
+            placeholder="예)프로그래밍"
+          />
+          전문가가 될 것이다.
+        </span>
+        <div class="hour-container">
+          <span class="row">그래서 앞으로 매일 하루에</span>
+          <span class="row">
+            <label class="sr-only" for="hour">시간</label>
+            <input type="text" name="hour" id="hour" placeholder="예)5시간" />
+            시간씩 훈련할 것이다.</span
+          >
+        </div>
+        <button>
+          <span>나는 며칠 동안 훈련을 해야</span>
+          <span>1만 시간이 될까?</span>
+        </button>
+      </section>
+      <section class="result">
+        <p>
+          <span class="row">
+            당신은 <span id="expertResult">프로그래밍</span> 전문가가 되기
+            위해서</span
+          ><span class="row"
+            >대략 <span id="hourResult">5110</span>일 이상 훈련하셔야 합니다!
+            :)</span
+          >
+        </p>
+        <button class="goto" onclick="modal()">훈련하러 가기 GO!GO!</button
+        ><button class="share">공유하기</button>
+      </section>
+    </main>
+    <footer>
+      <h2 class="sr-only">위니브</h2>
+      <img src="./img/logo.png" alt="위니브" />
+      <p class="legal">
+        ※ 본 서비스 내 이미지 및 콘텐츠의 저작권은 주식회사 WeNiv에 있습니다.<br />
+        수정 및 재배포, 무단 도용 시 법적인 문제가 발생할 수 있습니다.
+      </p>
+    </footer>
+    <dialog>
+      <h3 class="mobile">화이팅!!</h3>
+      <h3 class="desktop">화이팅!!♥♥♥</h3>
+      <p>당신의 꿈을 응원합니다!</p>
+      <img src="./img/licat.png" alt="응원하는 라이캣" />
+      <button onclick="modal()">
+        종료하고 진짜 <br class="mobile-break" />훈련하러 가기 GO!GO!
+      </button>
+    </dialog>
+    <script>
+      function modal() {
+        const body = document.querySelector("body");
+        body.classList.toggle("modal-show");
+      }
+    </script>
+  </body>
+</html>
