@@ -1,3 +1,6 @@
+![image](https://github.com/user-attachments/assets/3226083e-f113-4a42-8dab-5cecfeccb2c6)
+
+
 # 고양이 호두 랜딩 페이지
 
 고양이 호두 랜딩 페이지의 클론 코딩 프로젝트입니다.
