@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <title>HODU</title>
+  </head>
+  <body>
+    <script>
+      function navToggle() {
+        const body = document.querySelector("body");
+        body.classList.toggle("nav-toggle");
+        window.scrollTo(0, 0);
+      }
+    </script>
+    <header>
+      <a class="logo" href="./">
+        <h1 class="sr-only">HODU</h1>
+        <img src="./images/logo.svg" alt="HODU" />
+      </a>
+      <button class="desktop-hide" onclick="navToggle()">
+        <img src="./images/menu.svg" alt="Menu" />
+      </button>
+      <nav>
+        <button class="desktop-hide" onclick="navToggle()">
+          <img src="./images/arrow-right.svg" alt="Close" />
+        </button>
+        <ul>
+          <li><a href="./">Home</a></li>
+          <li><a href="./about">About</a></li>
+          <li><a href="./support">Support</a></li>
+        </ul>
+        <a class="rounded" href="./download">Download</a>
+      </nav>
+    </header>
+    <main>
+      <section class="hero">
+        <h2>Lorem Ipsum is simply dummy text of the printing and</h2>
+        <p>
+          Lorem Ipsum is simply dummy text of the printing and typesetting
+          industry. Lorem Ipsum has been the industry's standard dummy text ever
+          since the 1500s, when an unknown
+        </p>
+        <a class="rounded" href="./download">Download</a>
+        <img src="./images/box-cat.png" alt="상자를 머리에 쓰고 있는 호두" />
+      </section>
+      <section class="description">
+        <img src="./images/img_4.jpg" alt="침대에 누워 있는 호두" />
+        <h2>Lorem Ipsum is simply dummy text of the printing and dummy text</h2>
+        <p>
+          Lorem Ipsum is simply dummy text of the printing and typesetting
+          industry.
+        </p>
+      </section>
+      <section class="images">
+        <h2>dummy text of the printing and dummy</h2>
+        <p class="txt">
+          Lorem Ipsum is simply <span class="highlight">dummy text</span> of the
+          printing and typesetting industry. <br class="mobile-hide" />Lorem
+          Ipsum has been the industry's standard dummy text ever since the
+          1500s, when an unknown
+        </p>
+        <ul class="carousel">
+          <li>
+            <img src="./images/img_1.jpg" alt="캣타워에 앉아 있는 호두" />
+          </li>
+          <li>
+            <img src="./images/img_2.jpg" alt="벽을 바라보고 있는 호두" />
+          </li>
+          <li>
+            <img src="./images/img_3.jpg" alt="바닥에 앉아 있는 호두" />
+          </li>
+        </ul>
+        <p class="desc">
+          Lorem Ipsum is simply dummy text of the printing and typesetting
+          industry. <br class="mobile-hide" />Lorem Ipsum has been the
+          industry's standard dummy text ever since the 1500s, when an unknown
+          Ipsum is simply dummy text of the printing and typesetting industry.
+        </p>
+        <a class="rounded" href="./about">Learn More</a>
+      </section>
+      <section class="subscribe">
+        <h2>Subscribe to our Blog post</h2>
+        <p>
+          Lorem Ipsum is simply dummy text of the printing and typesetting
+          industry. Lorem Ipsum has been the industry's standard dummy text
+        </p>
+        <form action="./subscribe">
+          <div class="input-box">
+            <img src="./images/mail.svg" alt="" />
+            <input
+              type="email"
+              name="email"
+              id="email"
+              placeholder="Enter your e-mail address"
+            />
+          </div>
+          <input
+            class="rounded"
+            type="button"
+            value="Subscribe"
+            onclick="modal()"
+          />
+          <!-- 실제 작동할 때는 위의 input type을 submit으로 변경해야 함 -->
+        </form>
+      </section>
+    </main>
+    <footer>
+      <img class="logo" src="./images/logo.svg" alt="HODU" />
+      <ul class="social">
+        <li>
+          <a href="">
+            <img src="./images/blog.svg" alt="Blog" />
+          </a>
+        </li>
+        <li>
+          <a href="">
+            <img src="./images/instagram.svg" alt="Instagram" />
+          </a>
+        </li>
+        <li>
+          <a href="">
+            <img src="./images/facebook.svg" alt="Facebook" />
+          </a>
+        </li>
+        <li>
+          <a href="">
+            <img src="./images/youtube.svg" alt="YouTube" />
+          </a>
+        </li>
+      </ul>
+      <nav class="desktop-hide">
+        <ul>
+          <li><a href="./about">About</a></li>
+          <li><a href="./blog">Blog</a></li>
+          <li><a href="./support">Support</a></li>
+          <li><a href="./terms-of-use">Terms of Use</a></li>
+        </ul>
+      </nav>
+    </footer>
+    <button class="mobile-hide">
+      <img src="./images/top-btn.svg" alt="상단으로 이동" />
+    </button>
+    <script>
+      function modal() {
+        const body = document.querySelector("body");
+        body.classList.toggle("modal-show");
+      }
+    </script>
+    <dialog>
+      <img src="./images/cat-subscribe.png" alt="홍조를 띈 호두" />
+      <h3>Thank you!</h3>
+      <p>Lorem Ipsum is simply dummy text of the printing industry.</p>
+      <button class="rounded" onclick="modal()">OK! I Love HODU</button>
+    </dialog>
+  </body>
+</html>

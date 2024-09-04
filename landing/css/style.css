@@ -1,0 +1,680 @@
+@import url("./reset.css");
+@import url(//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css);
+
+:root {
+  --bg-color: #f2e9d8;
+  --bg-navy: #263140;
+  --bg-modal: #f2e9d8;
+  --highlight: #d97652;
+  --highlight-light: #f29d52;
+  --text: #000;
+  --text-gray: #767676;
+}
+
+html {
+  font-size: 10px;
+  font-family: "Spoqa Han Sans Neo";
+}
+
+body {
+  font-size: 1.4rem;
+}
+
+main {
+  overflow-x: hidden;
+  position: relative;
+}
+
+h2,
+h3 {
+  font-weight: 700;
+}
+
+h2,
+p {
+  line-height: normal;
+}
+
+span.highlight {
+  color: var(--highlight);
+  font-weight: 700;
+}
+
+a.rounded,
+button.rounded,
+input.rounded {
+  padding: 1.1rem 2.4rem;
+  background-color: var(--highlight);
+  border-radius: 4rem;
+  color: #fff;
+  font-weight: 700;
+}
+
+header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2.2rem 2rem;
+}
+
+header a.logo img {
+  width: 9.2rem;
+}
+
+header button,
+header button img {
+  width: 3.2rem;
+  height: 3.2rem;
+}
+
+header nav {
+  display: none; /* 임시로 작성한 코드 */
+}
+
+body.nav-toggle header nav {
+  width: 74.1%;
+  height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: var(--bg-navy);
+  padding: 2rem;
+  z-index: 10;
+  color: #fff;
+}
+
+body.nav-toggle header nav ul {
+  display: flex;
+  flex-direction: column;
+  row-gap: 3rem;
+  margin: 6.6rem 0 0 3rem;
+  font-weight: 700;
+}
+
+body.nav-toggle header nav a.rounded {
+  width: fit-content;
+  margin-top: 5rem;
+  margin-left: 3rem;
+}
+
+section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-left: 3.2rem;
+  padding-right: 3.2rem;
+}
+
+section.hero {
+  background-color: var(--bg-color);
+  padding: 4rem 5.5rem 0 5.5rem;
+}
+
+section.hero h2 {
+  text-align: center;
+  font-size: 2.4rem;
+  font-weight: 700;
+  width: 94.29%;
+}
+
+section.hero p {
+  text-align: center;
+  margin: 3rem 0;
+}
+
+section.hero img {
+  margin-top: 3rem;
+  width: 50.51%;
+}
+
+section.description {
+  padding-top: 3.2rem;
+  padding-bottom: 3rem;
+}
+
+section.description img {
+  width: 100%;
+  aspect-ratio: 22/13;
+  object-fit: cover;
+  object-position: 0% 35%;
+  border-radius: 1.8rem;
+  box-shadow: 10px 10px 20px 0px rgba(0, 0, 0, 0.25);
+}
+
+section.description h2 {
+  font-size: 2.4rem;
+  margin: 4rem 0 2rem;
+}
+
+section.images {
+  padding-left: 3.2rem;
+  padding-right: 3.2rem;
+}
+
+section.images {
+  padding-top: 3rem;
+}
+
+section.images h2 {
+  font-size: 2.4rem;
+  text-align: center;
+  color: var(--highlight);
+}
+
+section.images p {
+  font-size: 1.6rem;
+  text-align: center;
+  margin: 3rem 0 0;
+}
+
+section.images .carousel {
+  width: 100vw;
+  padding: 4rem 0 3rem;
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+}
+
+section.images .carousel li {
+  margin-right: 2rem;
+}
+
+section.images li:first-child {
+  margin-left: 3.2rem;
+}
+
+section.images li:last-child {
+  margin-right: 3.2rem;
+}
+
+section.images img {
+  width: 66.67vw;
+  aspect-ratio: 1/1;
+  border-radius: 18px;
+  box-shadow: 10px 10px 20px 0px rgba(0, 0, 0, 0.25);
+  scroll-snap-align: center;
+}
+
+section.images p.desc {
+  margin-top: 3rem;
+  text-align: left;
+}
+
+section.images a.rounded {
+  margin-top: 3rem;
+  margin-left: auto;
+}
+
+section.subscribe {
+  border-radius: 1.8rem;
+  background-color: var(--bg-navy);
+  color: #fff;
+  margin: 5rem 3.2rem 17.2rem;
+  padding: 3.6rem 3.2rem 3rem;
+}
+
+section.subscribe h2 {
+  width: 74.05%;
+  font-size: 2.4rem;
+  text-align: left;
+  margin-right: auto;
+}
+
+section.subscribe p {
+  margin-top: 2rem;
+  margin-bottom: 3rem;
+}
+
+section.subscribe form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+section.subscribe .input-box {
+  background-color: #fff;
+  color: #000;
+  border-radius: 60px;
+  display: flex;
+  align-items: center;
+  padding: 1.1rem 1.6rem;
+}
+
+section.subscribe .input-box img {
+  width: 1.8rem;
+  height: 1.8rem;
+}
+
+section.subscribe .input-box input {
+  font-size: 1.2rem;
+  border: none;
+  width: 100%;
+  margin-left: 1.4rem;
+  margin-right: 1.4rem;
+}
+
+section.subscribe input::placeholder {
+  color: var(--text-gray);
+}
+
+section.subscribe form input.rounded {
+  margin-top: 2rem;
+  margin-left: auto;
+}
+
+main::after {
+  content: "";
+  display: block;
+  position: absolute;
+  bottom: 0;
+  width: 100vw;
+  height: 61.54vw;
+  max-height: 29.749rem;
+  background: linear-gradient(
+      0deg,
+      rgba(242, 233, 216, 0.6) 0%,
+      rgba(242, 233, 216, 0.6) 100%
+    ),
+    url("../images/img_5.jpg") lightgray 0px -36px / 100% 162.5% no-repeat;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position-y: 27%;
+  z-index: -10;
+}
+
+footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 3rem 2rem 2.4rem;
+  display: grid;
+  grid-template-areas:
+    "logo nav"
+    "social nav";
+}
+
+footer div.container {
+  display: flex;
+  flex-direction: column;
+}
+
+footer img.logo {
+  width: 11.2rem;
+  grid-area: logo;
+}
+
+footer ul.social {
+  grid-area: social;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-top: 5.8rem;
+}
+
+footer ul.social li {
+  margin-right: 1.6rem;
+}
+
+footer ul.social li a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 3.2rem;
+  aspect-ratio: 1/1;
+  background-color: var(--highlight-light);
+  border-radius: 50%;
+  line-height: normal;
+}
+
+footer ul.social img {
+  width: 1.8286rem;
+  aspect-ratio: 1/1;
+  object-fit: cover;
+}
+
+footer nav {
+  grid-area: nav;
+  height: fit-content;
+}
+
+footer nav ul {
+  display: flex;
+  flex-direction: column;
+  row-gap: 1.6rem;
+}
+
+footer nav ul li {
+  text-align: right;
+  padding-top: 0.2rem;
+  padding-bottom: 0.2rem;
+  color: var(--text-gray);
+}
+
+.mobile-hide {
+  display: none;
+}
+
+body.modal-show,
+body.nav-toggle {
+  overflow: hidden;
+}
+
+body.modal-show dialog {
+  display: flex;
+}
+
+dialog {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  width: 76.92%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border: none;
+  border-radius: 30px;
+  box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.2);
+  background-image: url("../images/modal-bg-img.png");
+  background-color: var(--bg-modal);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: top;
+  padding: 4rem 5rem 3rem;
+}
+
+dialog img {
+  width: 30%;
+  aspect-ratio: 1/1.018;
+}
+
+dialog h3 {
+  font-size: 2.4rem;
+  margin-top: 2.4rem;
+  color: var(--highlight);
+}
+
+dialog p {
+  margin: 1rem 0 2.8rem;
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  :root {
+    --section-padding: 10vw;
+  }
+  html {
+    font-size: 10.59219px;
+  }
+  section.hero,
+  section.description,
+  section.images,
+  section.subscribe {
+    padding-left: var(--section-padding);
+    padding-right: var(--section-padding);
+  }
+  .desktop-hide {
+    display: none;
+  }
+
+  br.mobile-hide {
+    display: inline;
+  }
+
+  a.rounded,
+  button.rounded,
+  input.rounded {
+    padding: 1.312rem 2.625rem;
+    font-size: 1.4rem;
+  }
+
+  header {
+    background-color: var(--bg-color);
+    padding-left: var(--section-padding);
+    padding-right: var(--section-padding);
+  }
+
+  header nav {
+    display: flex;
+  }
+
+  header nav ul {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    column-gap: 3rem;
+    margin-right: 4rem;
+  }
+
+  section.subscribe {
+    margin-top: 7.875rem;
+    margin-left: var(--section-padding);
+    margin-right: var(--section-padding);
+    padding: 4.375rem 5.075rem;
+    display: grid;
+    grid-template-areas:
+      "heading form"
+      "desc form";
+    grid-template-columns: 1fr 45.53%;
+    row-gap: 1.575rem;
+  }
+  section.subscribe h2 {
+    grid-area: heading;
+    font-size: 3.15rem;
+    justify-self: start;
+  }
+
+  section.subscribe p {
+    grid-area: desc;
+    width: 25.57vw;
+    margin: 0;
+    color: var(--bg-color);
+    font-size: 1.225rem;
+  }
+
+  section.subscribe form {
+    grid-row: 1 / 3;
+  }
+
+  footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 3.937rem var(--section-padding);
+  }
+
+  footer ul.social {
+    margin-top: 0;
+  }
+}
+
+@media (min-width: 1024px) {
+  html {
+    font-size: 10.831px;
+  }
+  section.hero {
+    display: grid;
+    position: relative;
+    grid-template-areas:
+      "heading image"
+      "desc image"
+      "btn image";
+    grid-template-columns: 1fr 36.311rem;
+    grid-template-rows: auto;
+    overflow: hidden;
+  }
+
+  section.hero h2 {
+    grid-area: heading;
+    text-align: left;
+    font-size: 4.2rem;
+    margin-top: 14.7rem;
+  }
+  section.hero p {
+    width: 38.411rem;
+    grid-area: desc;
+    text-align: left;
+    margin-top: 3.5rem;
+    margin-bottom: 3.5rem;
+  }
+  section.hero a.rounded {
+    grid-area: btn;
+    margin-bottom: 22.924rem;
+    width: fit-content;
+  }
+  section.hero img {
+    grid-area: image;
+    justify-self: end;
+    position: absolute;
+    width: 100%;
+    top: 0;
+    /* bottom: -10.85rem; */
+    margin-top: 0;
+    object-fit: cover;
+    object-position: top;
+  }
+  section.description {
+    display: grid;
+    grid-template-areas:
+      "image empty0"
+      "image heading"
+      "image desc"
+      "image empty1";
+    grid-template-columns: 51.56% auto;
+    column-gap: 9.625rem;
+    padding-top: 7rem;
+    padding-bottom: 5.25rem;
+  }
+
+  section.description img {
+    grid-area: image;
+  }
+
+  section.description h2 {
+    grid-area: heading;
+    font-size: 3.15rem;
+  }
+  section.description p {
+    grid-area: desc;
+  }
+
+  section.images {
+    padding-top: 5.25rem;
+    display: grid;
+    grid-template-areas:
+      "heading heading"
+      "txt txt"
+      "carousel carousel"
+      "desc btn";
+    column-gap: 4.55rem;
+  }
+
+  section.images h2 {
+    grid-area: heading;
+    font-size: 4.2rem;
+  }
+
+  section.images p.txt {
+    grid-area: txt;
+    width: 38.49vw;
+    justify-self: center;
+  }
+
+  section.images ul.carousel {
+    grid-area: carousel;
+    width: 100%;
+  }
+
+  section.images ul.carousel li:first-child {
+    margin-left: 0;
+  }
+  section.images ul.carousel li {
+    margin-right: 6.3rem;
+  }
+  section.images ul.carousel li:last-child {
+    margin-right: 0;
+  }
+
+  section.images ul.carousel li img {
+    width: 19.69vw;
+  }
+
+  section.images p.desc {
+    grid-area: desc;
+    width: 38.49vw;
+    margin-left: auto;
+  }
+
+  section.images a.rounded {
+    grid-area: btn;
+    margin-left: 0;
+    margin-right: auto;
+    min-width: max-content;
+  }
+
+  main::after {
+    background-position-y: 35%;
+  }
+}
+
+@media (min-width: 1281px) {
+  :root {
+    --section-padding: 16.67vw;
+  }
+  html {
+    font-size: 11.4289px;
+  }
+
+  section.subscribe form {
+    grid-area: form;
+    justify-content: center;
+    position: relative;
+  }
+
+  section.subscribe form .input-box {
+    padding: 1.75rem 2.45rem;
+  }
+
+  section.subscribe form .input-box input {
+    font-size: 1.4rem;
+    margin-right: 11.812rem;
+  }
+
+  section.subscribe form > input.rounded {
+    position: absolute;
+    right: 0.437rem;
+    margin-top: auto;
+    width: max-content;
+    padding: 1.312rem 2.537rem;
+    line-height: 1.75rem;
+  }
+
+  body dialog {
+    width: 31.25%;
+    padding: 5.25rem 9.493rem 3.5rem;
+  }
+
+  body dialog img {
+    width: 9.625rem;
+  }
+
+  body dialog h3 {
+    font-size: 4.025rem;
+    margin-top: 2.1rem;
+  }
+
+  body dialog p {
+    font-size: 1.225rem;
+    margin-top: 1.05rem;
+    margin-bottom: 3.325rem;
+  }
+
+  body dialog button.rounded {
+    line-height: 1.75rem;
+  }
+}
