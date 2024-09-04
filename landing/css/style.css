@@ -25,12 +25,11 @@ main {
   position: relative;
 }
 
-h2,
+p.headline,
 h3 {
   font-weight: 700;
 }
 
-h2,
 p {
   line-height: normal;
 }
@@ -123,14 +122,14 @@ section.hero {
   padding: 4rem 5.5rem 0 5.5rem;
 }
 
-section.hero h2 {
+section.hero p.headline {
   text-align: center;
   font-size: 2.4rem;
   font-weight: 700;
   width: 94.29%;
 }
 
-section.hero p {
+section.hero p:not(p.headline) {
   text-align: center;
   margin: 3rem 0;
 }
@@ -154,7 +153,7 @@ section.description img {
   box-shadow: 10px 10px 20px 0px rgba(0, 0, 0, 0.25);
 }
 
-section.description h2 {
+section.description p.headline {
   font-size: 2.4rem;
   margin: 4rem 0 2rem;
 }
@@ -168,13 +167,13 @@ section.images {
   padding-top: 3rem;
 }
 
-section.images h2 {
+section.images p.headline {
   font-size: 2.4rem;
   text-align: center;
   color: var(--highlight);
 }
 
-section.images p {
+section.images p.txt {
   font-size: 1.6rem;
   text-align: center;
   margin: 3rem 0 0;
@@ -226,14 +225,14 @@ section.subscribe {
   padding: 3.6rem 3.2rem 3rem;
 }
 
-section.subscribe h2 {
+section.subscribe p.headline {
   width: 74.05%;
   font-size: 2.4rem;
   text-align: left;
   margin-right: auto;
 }
 
-section.subscribe p {
+section.subscribe p:not(p.headline) {
   margin-top: 2rem;
   margin-bottom: 3rem;
 }
@@ -481,13 +480,13 @@ dialog p {
     grid-template-columns: 1fr 45.53%;
     row-gap: 1.575rem;
   }
-  section.subscribe h2 {
+  section.subscribe p.headline {
     grid-area: heading;
     font-size: 3.15rem;
     justify-self: start;
   }
 
-  section.subscribe p {
+  section.subscribe p:not(p.headline) {
     grid-area: desc;
     width: 25.57vw;
     margin: 0;
@@ -545,13 +544,13 @@ dialog p {
     overflow: hidden;
   }
 
-  section.hero h2 {
+  section.hero p.headline {
     grid-area: heading;
     text-align: left;
     font-size: 4.2rem;
     margin-top: 14.7rem;
   }
-  section.hero p {
+  section.hero p:not(p.headline) {
     width: 38.411rem;
     grid-area: desc;
     text-align: left;
@@ -591,11 +590,11 @@ dialog p {
     grid-area: image;
   }
 
-  section.description h2 {
+  section.description p.headline {
     grid-area: heading;
     font-size: 3.15rem;
   }
-  section.description p {
+  section.description p:not(p.headline) {
     grid-area: desc;
   }
 
@@ -610,7 +609,7 @@ dialog p {
     column-gap: 4.55rem;
   }
 
-  section.images h2 {
+  section.images p.headline {
     grid-area: heading;
     font-size: 4.2rem;
   }
@@ -624,16 +623,18 @@ dialog p {
   section.images ul.carousel {
     grid-area: carousel;
     width: 100%;
+    justify-self: center;
+    overflow: visible;
   }
 
   section.images ul.carousel li:first-child {
-    margin-left: 0;
+    margin-left: auto;
   }
   section.images ul.carousel li {
     margin-right: 6.3rem;
   }
   section.images ul.carousel li:last-child {
-    margin-right: 0;
+    margin-right: auto;
   }
 
   section.images ul.carousel li img {
