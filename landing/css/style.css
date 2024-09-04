@@ -56,6 +56,11 @@ header {
   align-items: center;
   justify-content: space-between;
   padding: 2.2rem 2rem;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 5;
+  background-color: #fff;
 }
 
 header a.logo img {
@@ -69,7 +74,7 @@ header button img {
 }
 
 header nav {
-  display: none; /* 임시로 작성한 코드 */
+  display: none;
 }
 
 body.nav-toggle header nav {
@@ -98,6 +103,10 @@ body.nav-toggle header nav a.rounded {
   width: fit-content;
   margin-top: 5rem;
   margin-left: 3rem;
+}
+
+main {
+  margin-top: 7.6rem;
 }
 
 section {
@@ -437,6 +446,11 @@ dialog p {
     background-color: var(--bg-color);
     padding-left: var(--section-padding);
     padding-right: var(--section-padding);
+    padding-top: 2.712rem;
+  }
+
+  header a.logo img {
+    width: 11.375rem;
   }
 
   header nav {
@@ -449,6 +463,10 @@ dialog p {
     align-items: center;
     column-gap: 3rem;
     margin-right: 4rem;
+  }
+
+  main {
+    margin-top: 8.935rem;
   }
 
   section.subscribe {
@@ -490,6 +508,24 @@ dialog p {
 
   footer ul.social {
     margin-top: 0;
+  }
+
+  button.mobile-hide {
+    display: block;
+    position: fixed;
+    bottom: 16.1rem;
+    right: 2.1rem;
+    width: 4.375rem;
+    aspect-ratio: 1/1;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 50%;
+    border: 1px solid #c4c4c4;
+    background-image: url("../images/top-btn.svg");
+    background-position: center;
+  }
+
+  button.mobile-hide:hover {
+    background-image: url("../images/top-btn-hover.svg");
   }
 }
 
