@@ -252,9 +252,14 @@ section.subscribe .input-box {
   padding: 1.1rem 1.6rem;
 }
 
-section.subscribe .input-box img {
+section.subscribe .input-box::before {
+  content: "";
   width: 1.8rem;
   height: 1.8rem;
+  background-image: url("../images/mail.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 section.subscribe .input-box input {
