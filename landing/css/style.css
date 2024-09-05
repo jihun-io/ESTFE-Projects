@@ -90,6 +90,38 @@ body.nav-toggle header nav {
   color: #fff;
 }
 
+body header::before {
+  content: "";
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  border: 0;
+  clip: rect(0 0 0 0);
+
+  background-color: rgba(0, 0, 0, 0);
+  transition: background-color 0.3s;
+}
+
+body.nav-toggle header::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  clip-path: inherit;
+  clip: inherit;
+  border: inherit;
+  width: 100dvw;
+  height: 100dvh;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 2;
+}
+
 body.nav-toggle header nav ul {
   display: flex;
   flex-direction: column;
@@ -380,6 +412,31 @@ body.modal-show dialog {
   display: flex;
 }
 
+body::before {
+  content: "";
+  background-color: rgba(0, 0, 0, 0);
+  transition: background-color 0.3s;
+  clip-path: inset(50%);
+  border: 0;
+  clip: rect(0 0 0 0);
+}
+
+body.modal-show::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100dvw;
+  height: 100dvh;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 99;
+  clip-path: inherit;
+  clip: inherit;
+  border: inherit;
+}
+
 dialog {
   display: none;
   flex-direction: column;
@@ -399,6 +456,7 @@ dialog {
   background-repeat: no-repeat;
   background-position: top;
   padding: 4rem 5rem 3rem;
+  z-index: 100;
 }
 
 dialog img {
